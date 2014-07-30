@@ -5,6 +5,8 @@
      */
     function SongRatingFactory() {
 
+        var self = this;
+
         this.userTemplate = _.template($('#userTemplate').html());
         this.ratingsTemplate = _.template($('#ratingsTemplate').html());
 
@@ -17,16 +19,20 @@
 
             e.preventDefault();
 
+            var submitted = 0;
             // gather data
             var strUser = $('#twitter-handle').val(),
                 strSong = $('#song-listened').val(),
                 strRating = $('#song-rating').val();
 
-            if (strUser !== '') {
+            if (strUser !== '' && strSong !== '') {
                 $.publish('/new/user', {name: strUser});
-            }
-            if (strRating !== '') {
+
                 $.publish('/new/rating', {title: strSong, rating: strRating});
+                submitted++;
+            }
+            if (submitted > 0) {
+                self._resetForm();
             }
         });
     }
@@ -39,9 +45,6 @@
         newUser: function (e, data) {
             if (data) {
                 $('#users').append( this.userTemplate(data) );
-                $('#twitter-handle').val('');
-                $('#song-listened').val('');
-                $('#song-rating').val('5');
             }
         },
 
@@ -52,6 +55,15 @@
             if (data) {
                 $('#ratings').append( this.ratingsTemplate(data) );
             }
+        },
+
+        /**
+         * Reset's the form
+         */
+        _resetForm: function () {
+            $('#twitter-handle').val('');
+            $('#song-listened').val('');
+            $('#song-rating').val('5');
         }
 
     };
