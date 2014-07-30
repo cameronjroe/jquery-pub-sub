@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Web Template</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <script id="userTemplate" type="text/html">
+        <li><%= name %></li>
+    </script>
+
+    <script id="ratingsTemplate" type="text/html">
+        <li><strong><%= title %></strong> was rated <%= rating %>/5</li>
+    </script>
+	
+	<div class="container">
+		<h1>jquery-pub-sub</h1>
+        
+        <section class="ratingForm">
+            <p>
+                <label for="twitter-handle">Twitter Handle:</label>
+                <input type="text" id="twitter-handle">
+            </p>
+            <p>
+                <label for="song-listened">Name a song that you've listened to this year:</label>
+                <input type="text" id="song-listened">
+            </p>
+            <p>
+                <label for="song-rating">Rate that song:</label>
+                <select id="song-rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5" selected>5</option>
+                </select>
+            </p>
+            <p>
+                <button id="add">Submit rating</button>
+            </p>
+        </section>
+
+        <section class="summaryTable">
+            <div id="users" class="summary">
+                <h3>Recent Users</h3>
+            </div>
+            <div id="ratings" class="summary">
+                <h3>Recent songs rated</h3>
+            </div>
+        </section>
+
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="bower_components/jquery-tiny-pubsub/dist/ba-tiny-pubsub.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

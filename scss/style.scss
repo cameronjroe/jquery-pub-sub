@@ -1,0 +1,100 @@
+@import "compass";
+
+@include global-reset();
+
+* {
+  @include box-sizing(border-box);
+}
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  padding: 2em;
+}
+p {
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 0.5em 0;
+}
+
+h4 {
+  margin-top: 25px;
+}
+
+input {
+  font-size: 0.9em;
+  line-height: 1.2em;
+  min-width: 200px;
+  display: block;
+}
+select {
+  font-size: 0.9em;
+  line-height: 1.2em;
+}
+.row {
+  margin-bottom: 20px;
+}
+.row .row {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid rgba(86,61,124,.2);
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#add {
+  font-size: 0.9em;
+  border: 0;
+  box-shadow: 1px 1px 2px #ccc;
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  background-color: #fff;
+}
+.ratingForm {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #ccc;
+  min-width: 50%;
+  padding: 1.5em;
+  margin-left: -4px;
+}
+.summaryTable {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #999999;
+  min-width: 50%;
+  padding: 1.5em;
+  margin-left: -4px;
+}
+.summary {
+  float: left;
+  padding: 0 1em;
+  min-width: 50%;
+  h3 {
+    font-weight: bold;
+  }
+  li {
+    padding: 0.5em;
+    list-style: none;
+    background-color: beige;
+    margin: 0.5em 0;
+  }
+}

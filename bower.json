@@ -1,0 +1,7 @@
+{
+  "name": "jquery-pub-sub",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery-tiny-pubsub": "~0.7.0"
+  }
+}
